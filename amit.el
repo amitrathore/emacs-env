@@ -1,5 +1,6 @@
 (setq *MONITOR-WIDTH* 1920)
 
+(setq *WORKSPACE* "/Users/amit/workspace")
 (setq *FURTIVE-ROOT* "/Users/amit/workspace/furtive")
 (setq *SWARMIJI-ROOT* "/Users/amit/workspace/swarmiji")
 (setq *COMMON-JARS-ROOT* "/Users/amit/workspace/common-jars")

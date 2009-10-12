@@ -7,3 +7,4 @@ scripts/furtive
 logs/*
 logs
 user-setup.el
+auto-save-list
