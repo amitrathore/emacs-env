@@ -41,7 +41,11 @@
 (require 'slime)
 (slime-setup)
 
-
-;;ido-mode
+;; ido-mode
 (require 'ido)
 (ido-mode t)
+
+;; maxframe
+(require 'maxframe)
+(setq mf-max-width *MONITOR-WIDTH*)  ;; Pixel width of main monitor.
+(add-hook 'window-setup-hook 'maximize-frame t)
