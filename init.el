@@ -83,3 +83,5 @@
 (when (fboundp 'windmove-default-keybindings)
       (windmove-default-keybindings))
 
+;; load custom key-bindings
+(load-file (concat *EMACS-ENV* "/custom/key_bindings.el"))

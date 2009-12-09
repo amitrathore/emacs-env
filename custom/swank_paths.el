@@ -28,14 +28,11 @@
 (add-to-list 'extra-classpaths (concat *WORKSPACE* "/furtive/lib/clojure/clj-record/"))
 (add-to-list 'extra-classpaths (concat *WORKSPACE* "/furtive/lib/clojure/postal/src/clj/"))
 (add-to-list 'extra-classpaths (concat *WORKSPACE* "/furtive/lib/clojure/redis-clojure/src/"))
-(add-to-list 'extra-classpaths (concat *WORKSPACE* "/frumios/src/"))
-(add-to-list 'extra-classpaths (concat *WORKSPACE* "/frumios/spec/"))
 (add-to-list 'extra-classpaths (concat *WORKSPACE* "/capjure/src/"))
 (add-to-list 'extra-classpaths (concat *WORKSPACE* "/capjure/spec/"))
 (add-to-list 'extra-classpaths (concat *WORKSPACE* "/oroborus/src/"))
 (add-to-list 'extra-classpaths (concat *WORKSPACE* "/clj-utils/src/"))
 (add-to-list 'extra-classpaths (concat *WORKSPACE* "/webbing/src/"))
-(add-to-list 'extra-classpaths (concat *WORKSPACE* "/damages/src/"))
 
 (load-file (concat *EMACS-ENV* "/custom/user_paths.el"))
 
