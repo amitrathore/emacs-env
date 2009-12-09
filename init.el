@@ -33,6 +33,7 @@
 ;                                       (concat *EMACS-ENV* "/packages/clojure-contrib/clojure-contrib.jar")))
 
 (load-file (concat *EMACS-ENV* "/custom/swank_paths.el"))
+
 (require 'swank-clojure-autoload)
 
 ;;; paredit
@@ -77,3 +78,8 @@
  ;; Rinari
 (add-to-list 'load-path "~/path/to/your/elisp/rinari")
 (require 'rinari)
+
+;; windmove
+(when (fboundp 'windmove-default-keybindings)
+      (windmove-default-keybindings))
+

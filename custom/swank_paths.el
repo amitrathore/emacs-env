@@ -37,4 +37,6 @@
 (add-to-list 'extra-classpaths (concat *WORKSPACE* "/webbing/src/"))
 (add-to-list 'extra-classpaths (concat *WORKSPACE* "/damages/src/"))
 
+(load-file (concat *EMACS-ENV* "/custom/user_paths.el"))
+
 (setq swank-clojure-extra-classpaths extra-classpaths)
