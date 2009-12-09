@@ -8,3 +8,4 @@ logs/*
 logs
 user-setup.el
 auto-save-list
+*.elc

@@ -2,12 +2,23 @@
 
 (load-file (concat *EMACS-ENV* "/user-setup.el"))
 
+;;; This was installed by package-install.el.
+;;; This provides support for the package system and
+;;; interfacing with ELPA, the package archive.
+;;; Move this code earlier if you want to reference
+;;; packages in your .emacs.
+(when
+    (load
+     (expand-file-name "~/.emacs.d/elpa/package.el"))
+  (package-initialize))
+
 ;; clojure stuff
 (add-to-list 'load-path *EMACS-ENV*)
 (add-to-list 'load-path (concat *EMACS-ENV* "/packages"))
 (add-to-list 'load-path (concat *EMACS-ENV* "/packages/clojure-mode"))
 (add-to-list 'load-path (concat *EMACS-ENV* "/packages/swank-clojure"))
 (add-to-list 'load-path (concat *EMACS-ENV* "/packages/slime"))
+(add-to-list 'load-path (concat *EMACS-ENV* "/elpa/rinari-2.1"))
 
 ;; clojure-mode
 (add-to-list 'load-path (concat *EMACS-ENV* "/packages/clojure-mode"))
@@ -49,3 +60,20 @@
 (require 'maxframe)
 (setq mf-max-width *MONITOR-WIDTH*)  ;; Pixel width of main monitor.
 (add-hook 'window-setup-hook 'maximize-frame t)
+
+;; ruby mode
+(autoload 'ruby-mode "ruby-mode"
+  "Mode for editing ruby source files")
+(add-to-list 'auto-mode-alist '("\\.rb$" . ruby-mode))
+(add-to-list 'interpreter-mode-alist '("ruby" . ruby-mode))
+(autoload 'run-ruby "inf-ruby"
+  "Run an inferior Ruby process")
+ (autoload 'inf-ruby-keys "inf-ruby"
+   "Set local key defs for inf-ruby in ruby-mode")
+(add-hook 'ruby-mode-hook
+	  '(lambda ()
+	     (inf-ruby-keys)))
+
+ ;; Rinari
+(add-to-list 'load-path "~/path/to/your/elisp/rinari")
+(require 'rinari)
