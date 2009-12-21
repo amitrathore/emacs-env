@@ -83,5 +83,9 @@
 (when (fboundp 'windmove-default-keybindings)
       (windmove-default-keybindings))
 
+;; javascript
+(add-to-list 'auto-mode-alist '("\\.js\\'" . javascript-mode))
+(autoload 'javascript-mode "javascript" nil t)
+
 ;; load custom key-bindings
 (load-file (concat *EMACS-ENV* "/custom/key_bindings.el"))
