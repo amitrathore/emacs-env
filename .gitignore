@@ -8,8 +8,6 @@ logs/*
 logs
 user-setup.el
 auto-save-list
-<<<<<<< HEAD:.gitignore
 *.elc
-=======
 custom/user_paths.el
->>>>>>> 9bf83cc9dd304a26843589bd5fc126bdb70be162:.gitignore
+.DS_Store

@@ -12,16 +12,13 @@
      (expand-file-name "~/.emacs.d/elpa/package.el"))
   (package-initialize))
 
-;; clojure stuff
 (add-to-list 'load-path *EMACS-ENV*)
 (add-to-list 'load-path (concat *EMACS-ENV* "/packages"))
 (add-to-list 'load-path (concat *EMACS-ENV* "/packages/clojure-mode"))
 (add-to-list 'load-path (concat *EMACS-ENV* "/packages/swank-clojure"))
 (add-to-list 'load-path (concat *EMACS-ENV* "/packages/slime"))
-(add-to-list 'load-path (concat *EMACS-ENV* "/elpa/rinari-2.1"))
 
 ;; clojure-mode
-(add-to-list 'load-path (concat *EMACS-ENV* "/packages/clojure-mode"))
 (require 'clojure-mode)
 
 ;; swank-clojure
@@ -49,7 +46,6 @@
 (eval-after-load "slime"
   '(progn (slime-setup '(slime-repl))))
 
-(add-to-list 'load-path (concat *EMACS-ENV*"/packages/slime"))
 (require 'slime)
 (slime-setup)
 
@@ -74,10 +70,6 @@
 (add-hook 'ruby-mode-hook
 	  '(lambda ()
 	     (inf-ruby-keys)))
-
- ;; Rinari
-(add-to-list 'load-path "~/path/to/your/elisp/rinari")
-(require 'rinari)
 
 ;; windmove
 (when (fboundp 'windmove-default-keybindings)
