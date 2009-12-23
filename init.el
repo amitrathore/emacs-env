@@ -79,10 +79,13 @@
 (add-to-list 'auto-mode-alist '("\\.js\\'" . javascript-mode))
 (autoload 'javascript-mode "javascript" nil t)
 
-;; js-lint
+;; js-lint 
+;; JSLINT_HOME needs to be set and be on the path
 (require 'flymake-jslint)
 (add-hook 'javascript-mode-hook
-	  (lambda () (flymake-mode t)))
+	  (lambda () 
+	    (flymake-mode t)
+	    (local-set-key [f8] 'flymake-display-err-menu-for-current-line)))
 
 ;; load custom key-bindings
 (load-file (concat *EMACS-ENV* "/custom/key_bindings.el"))

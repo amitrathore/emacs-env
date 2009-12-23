@@ -1,6 +1,6 @@
 (require 'flymake)
 
-(setq JS-LINT-FILE (concat *EMACS-ENV* "/extras/jslist.js"))
+(setq JS-LINT-FILE (concat *EMACS-ENV* "/extras/jslint/jslint.js"))
 
 (defun flymake-jslint-init ()
   (let* ((temp-file (flymake-init-create-temp-buffer-copy
