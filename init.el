@@ -79,5 +79,10 @@
 (add-to-list 'auto-mode-alist '("\\.js\\'" . javascript-mode))
 (autoload 'javascript-mode "javascript" nil t)
 
+;; js-lint
+(require 'flymake-jslint)
+(add-hook 'javascript-mode-hook
+	  (lambda () (flymake-mode t)))
+
 ;; load custom key-bindings
 (load-file (concat *EMACS-ENV* "/custom/key_bindings.el"))
