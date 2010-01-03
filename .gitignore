@@ -11,3 +11,7 @@ auto-save-list
 *.elc
 custom/user_paths.el
 .DS_Store
+desktop/*
+url/*
+history
+tramp
