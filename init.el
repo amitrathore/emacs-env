@@ -176,6 +176,11 @@
 	    (flymake-mode t)
 	    (local-set-key [f8] 'flymake-display-err-menu-for-current-line)))
 
+;;; moz-labs
+(autoload 'moz-minor-mode "moz" "Mozilla Minor and Inferior Mozilla Modes" t)
+(add-hook 'espresso-mode-hook 'espresso-custom-setup)
+(defun espresso-custom-setup ()
+  (moz-minor-mode 1))
 
 ;; erlang-mode
 (setq erlang-root-dir "/opt/local/lib/erlang")
@@ -185,6 +190,12 @@
 ;; distel mode for Erlang
 (require 'distel)
 (distel-setup)
+
+;; column-number-mode
+(setq line-number-mode t)
+
+;; y-or-n
+(defalias 'yes-or-no-p 'y-or-n-p)
 
 ;; load custom key-bindings
 (load-file (concat *EMACS-ENV* "/custom/key_bindings.el"))
