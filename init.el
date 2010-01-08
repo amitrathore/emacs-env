@@ -69,6 +69,9 @@
     (when file
       (find-file file))))
 
+;; tabs
+(setq-default indent-tabs-mode nil)
+
 ;; desktop-save mode
 
 
