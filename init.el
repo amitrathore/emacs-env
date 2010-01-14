@@ -73,8 +73,6 @@
 (setq-default indent-tabs-mode nil)
 
 ;; desktop-save mode
-
-
 (setq *foo-desktop-dir* (expand-file-name "~/.emacs.d/desktop"))
 (setq desktop-dir *foo-desktop-dir*)
 (setq desktop-path (list *foo-desktop-dir*))
@@ -98,6 +96,9 @@
 	  (lambda ()
 	    (setq *foo-desktop-saver-timer*
 		  (run-with-timer 5 300 'autosave-desktop))))
+
+;; winner-mode for window configuration management
+(winner-mode 1)
 
 ;; save-point in file
 (require 'saveplace)
@@ -186,13 +187,13 @@
   (moz-minor-mode 1))
 
 ;; erlang-mode
-(setq erlang-root-dir "/opt/local/lib/erlang")
-(setq exec-path (cons "/opt/local/bin" exec-path))
-(require 'erlang-start)
+;(setq erlang-root-dir "/opt/local/lib/erlang")
+;(setq exec-path (cons "/opt/local/bin" exec-path))
+;(require 'erlang-start)
 
 ;; distel mode for Erlang
-(require 'distel)
-(distel-setup)
+;(require 'distel)
+;(distel-setup)
 
 ;; column-number-mode
 (setq line-number-mode t)
