@@ -51,6 +51,8 @@
 (require 'slime)
 (slime-setup)
 
+(add-to-list 'slime-lisp-implementations '(sbcl ("sbcl")))
+
 ;; ido-mode
 (require 'ido)
 (ido-mode t)
