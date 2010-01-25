@@ -25,6 +25,7 @@
 (mapcar 'add-to-extra-classpath CLOJURE-MODULES)
 
 (add-to-list 'extra-classpaths (concat *WORKSPACE* "/clj-record/src/"))
+(add-to-list 'extra-classpaths (concat *WORKSPACE* "/furtive/spec/"))
 (add-to-list 'extra-classpaths (concat *WORKSPACE* "/furtive/lib/clojure/postal/src/clj/"))
 (add-to-list 'extra-classpaths (concat *WORKSPACE* "/furtive/lib/clojure/redis-clojure/src/main/clojure/"))
 (add-to-list 'extra-classpaths (concat *WORKSPACE* "/furtive/lib/clojure/clojure-http-client/src/"))
