@@ -6,7 +6,7 @@
 (add-to-list 'extra-classpaths (concat *FURTIVE-ROOT* "/src/"))
 (setq FURTIVE-JARS
       (directory-files (concat *FURTIVE-ROOT* "/lib/java") t "\\.jar$"))
-;(mapcar 'add-to-extra-classpath FURTIVE-JARS)
+(mapcar 'add-to-extra-classpath FURTIVE-JARS)
 
 (add-to-list 'extra-classpaths (concat *SWARMIJI-ROOT* "/src/"))
 (setq SWARMIJI-JARS
@@ -22,7 +22,7 @@
        (lambda (clj_module) 
          (concat *FURTIVE-ROOT* "/lib/clojure/" clj_module "/src/")) 
        (cddr (directory-files (concat *FURTIVE-ROOT* "/lib/clojure")))))
-;(mapcar 'add-to-extra-classpath CLOJURE-MODULES)
+(mapcar 'add-to-extra-classpath CLOJURE-MODULES)
 
 (add-to-list 'extra-classpaths (concat *WORKSPACE* "/clj-record/src/"))
 (add-to-list 'extra-classpaths (concat *WORKSPACE* "/furtive/spec/"))
