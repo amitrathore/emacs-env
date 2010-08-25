@@ -10,7 +10,7 @@
 
 (add-to-list 'extra-classpaths (concat *SWARMIJI-ROOT* "/src/"))
 (setq SWARMIJI-JARS
-      (directory-files (concat *SWARMIJI-ROOT* "/lib/java") t "\\.jar$"))
+      (directory-files (concat *SWARMIJI-ROOT* "/lib") t "\\.jar$"))
 (mapcar 'add-to-extra-classpath SWARMIJI-JARS)
 
 (setq COMMON-JARS
@@ -27,11 +27,11 @@
 (add-to-list 'extra-classpaths (concat *WORKSPACE* "/clj-record/src/"))
 (add-to-list 'extra-classpaths (concat *WORKSPACE* "/furtive/spec/"))
 (add-to-list 'extra-classpaths (concat *WORKSPACE* "/furtive/lib/clojure/postal/src/clj/"))
-(add-to-list 'extra-classpaths (concat *WORKSPACE* "/furtive/lib/clojure/redis-clojure/src/main/clojure/"))
+(add-to-list 'extra-classpaths (concat *WORKSPACE* "/redis-clojure/src/"))
+;(add-to-list 'extra-classpaths (concat *WORKSPACE* "/humpty-dumpty/lib/clojure/redis-clojure/src/"))
 (add-to-list 'extra-classpaths (concat *WORKSPACE* "/furtive/lib/clojure/clojure-http-client/src/"))
 (add-to-list 'extra-classpaths (concat *WORKSPACE* "/capjure/src/"))
 (add-to-list 'extra-classpaths (concat *WORKSPACE* "/capjure/spec/"))
-(add-to-list 'extra-classpaths (concat *WORKSPACE* "/oroborus/src/"))
 (add-to-list 'extra-classpaths (concat *WORKSPACE* "/clj-utils/src/"))
 (add-to-list 'extra-classpaths (concat *WORKSPACE* "/webbing/src/"))
 

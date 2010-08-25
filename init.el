@@ -17,7 +17,7 @@
 (add-to-list 'load-path (concat *EMACS-ENV* "/packages/clojure-mode"))
 (add-to-list 'load-path (concat *EMACS-ENV* "/packages/swank-clojure"))
 (add-to-list 'load-path (concat *EMACS-ENV* "/packages/slime"))
-(add-to-list 'load-path "/opt/local/lib/erlang/lib/tools-2.6.4/emacs")
+(add-to-list 'load-path "/opt/local/lib/erlang/lib/tools-2.6.6/emacs")
 (add-to-list 'load-path (concat *EMACS-ENV* "/packages/distel-4.03/elisp"))
 
 ;; clojure-mode
@@ -73,6 +73,9 @@
 
 ;; tabs
 (setq-default indent-tabs-mode nil)
+
+;;comments
+;(define-key map [(control meta \;)] 'comment-or-uncomment-region-or-line)
 
 ;; desktop-save mode
 (setq *foo-desktop-dir* (expand-file-name "~/.emacs.d/desktop"))
@@ -176,11 +179,11 @@
 
 ;; js-lint 
 ;; JSLINT_HOME needs to be set and be on the path
-(require 'flymake-jslint)
-(add-hook 'javascript-mode-hook
-	  (lambda () 
-	    (flymake-mode t)
-	    (local-set-key [f8] 'flymake-display-err-menu-for-current-line)))
+;;(require 'flymake-jslint)
+;;(add-hook 'javascript-mode-hook
+;;	  (lambda () 
+;;	    (flymake-mode t)
+;;	    (local-set-key [f8] 'flymake-display-err-menu-for-current-line)))
 
 ;;; moz-labs
 (autoload 'moz-minor-mode "moz" "Mozilla Minor and Inferior Mozilla Modes" t)
@@ -194,8 +197,8 @@
 ;(require 'erlang-start)
 
 ;; distel mode for Erlang
-;(require 'distel)
-;(distel-setup)
+(require 'distel)
+(distel-setup)
 
 ;; column-number-mode
 (setq line-number-mode t)

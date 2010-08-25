@@ -11,15 +11,46 @@
       (directory-files (concat *WORKSPACE* "/remember/lib/java/") t "\\.jar$"))
 (mapcar 'add-to-extra-classpath REMEMBER-JARS)
 
+;;; the Fabric project
+(add-to-list 'extra-classpaths (concat *WORKSPACE* "/fabric/src/"))
+(setq FABRIC-JARS
+      (directory-files (concat *WORKSPACE* "/fabric/lib/") t "\\.jar$"))
+(mapcar 'add-to-extra-classpath FABRIC-JARS)
+
+;;; the Jabberwocky project
+(add-to-list 'extra-classpaths (concat *WORKSPACE* "/jabberwocky/src/"))
+(setq JABBERWOCKY-JARS
+      (directory-files (concat *WORKSPACE* "/jabberwocky/lib/java/") t "\\.jar$"))
+(mapcar 'add-to-extra-classpath JABBERWOCKY-JARS)
+
 ;;; the Clojure in Action project
 (add-to-list 'extra-classpaths "/Users/amit/labs/projectx/writing/manning/muse/muse-content/")
 (add-to-list 'extra-classpaths (concat *WORKSPACE* "/ring/src/"))
 (add-to-list 'extra-classpaths (concat *WORKSPACE* "/compojure/src/"))
 (add-to-list 'extra-classpaths (concat *WORKSPACE* "/clj-html/src/"))
 (add-to-list 'extra-classpaths (concat *WORKSPACE* "/enlive/src/"))
+(setq MANNING-JARS
+      (directory-files "/Users/amit/labs/projectx/writing/manning/muse/muse-content/lib/" t "\\.jar$"))
+(mapcar 'add-to-extra-classpath MANNING-JARS)
+
+
 
 ;;; the Cognifly/Cratos
 (add-to-list 'extra-classpaths (concat *WORKSPACE* "/okula/cratos/src/"))
 (setq CRATOS-JARS
       (directory-files (concat *WORKSPACE* "/okula/cratos/lib/java/") t "\\.jar$"))
 (mapcar 'add-to-extra-classpath CRATOS-JARS)
+
+;;;; sherlock anaphoric macros, and other stuff
+(add-to-list 'extra-classpaths (concat *WORKSPACE* "/sherlock/src/"))
+
+;;;; the oroborus project
+(add-to-list 'extra-classpaths (concat *WORKSPACE* "/oroborus/src/"))
+(add-to-list 'extra-classpaths (concat *WORKSPACE* "/oroborus/spec/"))
+
+;;;; sandman 
+(add-to-list 'extra-classpaths (concat *WORKSPACE* "/sandman/src/"))
+(add-to-list 'extra-classpaths (concat *WORKSPACE* "/sandman/spec/"))
+
+(add-to-list 'extra-classpaths (concat *WORKSPACE* "/sandman-client/src/"))
+(add-to-list 'extra-classpaths (concat *WORKSPACE* "/sandman-client/spec/"))
