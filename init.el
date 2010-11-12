@@ -18,9 +18,7 @@
 (add-to-list 'load-path (concat *EMACS-ENV* "/packages/clojure-mode"))
 (add-to-list 'load-path (concat *EMACS-ENV* "/packages/swank-clojure"))
 (add-to-list 'load-path (concat *EMACS-ENV* "/packages/slime"))
-(add-to-list 'load-path "/opt/local/lib/erlang/lib/tools-2.6.6/emacs")
 (add-to-list 'load-path (concat *EMACS-ENV* "/packages/distel-4.03/elisp"))
-(add-to-list 'load-path (concat *EMACS-ENV* "/packages/haskell-mode-2.8.0/"))
 
 (require 'clojure-mode)
 
@@ -205,21 +203,7 @@
 (defun espresso-custom-setup ()
   (moz-minor-mode 1))
 
-;; erlang-mode
-;(setq erlang-root-dir "/opt/local/lib/erlang")
-;(setq exec-path (cons "/opt/local/bin" exec-path))
-;(require 'erlang-start)
 
-;; distel mode for Erlang
-(require 'distel)
-(distel-setup)
-(add-to-list 'auto-mode-alist '("\\.erl$" . erlang-mode))
-
-;; Haskell mode
-(require 'haskell-mode)
-
-;; SML mode
-(load "/usr/local/share/emacs/site-lisp/sml-mode/sml-mode-startup")
 
 ;; column-number-mode
 (setq line-number-mode t)
