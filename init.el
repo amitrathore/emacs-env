@@ -144,6 +144,12 @@
 (setq mf-max-width *MONITOR-WIDTH*)  ;; Pixel width of main monitor.
 (add-hook 'window-setup-hook 'maximize-frame t)
 
+;;slime
+;;(add-hook 'slime-connected-hook (lambda () 
+;;                                 (slime-redirect-inferior-output)
+;;                                  (slime-eval `(swank:eval-and-grab-output "(use 'com.cinch.furtive.init)"))
+;;                                  (slime-eval `(swank:eval-and-grab-output "(load-furtive-emacs)"))))
+
 ;; revive
 (autoload 'save-current-configuration "revive" "Save status" t)
 (autoload 'resume "revive" "Resume Emacs" t)
@@ -205,3 +211,32 @@
 
 ;; load custom key-bindings
 (load-file (concat *EMACS-ENV* "/custom/key_bindings.el"))
+(put 'narrow-to-region 'disabled nil)
+
+
+;; Wordpress
+
+
+;; load Color Theme
+(load-file (concat *EMACS-ENV* "/packages/color-theme.el"))
+(load-file (concat *EMACS-ENV* "/packages/color-theme-vibrant-ink/color-theme-vibrant-ink.el"))
+
+(require 'color-theme)
+
+(eval-after-load "color-theme"
+  '(progn
+     (color-theme-vibrant-ink)))
+
+(custom-set-variables
+  ;; custom-set-variables was added by Custom.
+  ;; If you edit it by hand, you could mess it up, so be careful.
+  ;; Your init file should contain only one such instance.
+  ;; If there is more than one, they won't work right.
+ '(show-paren-mode t)
+ '(weblogger-config-alist (quote (("TechBehindTech" "http://techbehindtech.com/xmlrpc.php" "sivajag" "" "11954221")))))
+(custom-set-faces
+  ;; custom-set-faces was added by Custom.
+  ;; If you edit it by hand, you could mess it up, so be careful.
+  ;; Your init file should contain only one such instance.
+  ;; If there is more than one, they won't work right.
+ '(cursor ((t (:background "white" :weight normal :height 140 :width normal)))))
