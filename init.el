@@ -7,6 +7,7 @@
 ;;; interfacing with ELPA, the package archive.
 ;;; Move this code earlier if you want to reference
 ;;; packages in your .emacs.
+
 (when
     (load
      (expand-file-name "~/.emacs.d/elpa/package.el"))
@@ -17,20 +18,15 @@
 (add-to-list 'load-path (concat *EMACS-ENV* "/packages/clojure-mode"))
 (add-to-list 'load-path (concat *EMACS-ENV* "/packages/swank-clojure"))
 (add-to-list 'load-path (concat *EMACS-ENV* "/packages/slime"))
-(add-to-list 'load-path "/opt/local/lib/erlang/lib/tools-2.6.4/emacs")
+(add-to-list 'load-path "/opt/local/lib/erlang/lib/tools-2.6.6/emacs")
 (add-to-list 'load-path (concat *EMACS-ENV* "/packages/distel-4.03/elisp"))
+(add-to-list 'load-path (concat *EMACS-ENV* "/packages/haskell-mode-2.8.0/"))
 
-;; clojure-mode
 (require 'clojure-mode)
 
 ;; swank-clojure
 (add-to-list 'load-path (concat *EMACS-ENV* "/packages/swank-clojure/src/emacs"))
-
 (setq swank-clojure-jar-path (concat *EMACS-ENV* "/packages/clojure/clojure.jar"))
-;      swank-clojure-extra-classpaths (list
-;				        (concat *EMACS-ENV* "/packages/swank-clojure/src/main/clojure")
-;                                       (concat *EMACS-ENV* "/packages/clojure-contrib/clojure-contrib.jar")))
-
 (load-file (concat *EMACS-ENV* "/custom/swank_paths.el"))
 
 (require 'swank-clojure-autoload)
@@ -51,7 +47,19 @@
 (require 'slime)
 (slime-setup)
 
-(add-to-list 'slime-lisp-implementations '(sbcl ("sbcl")))
+;(add-to-list 'slime-lisp-implementations '(sbcl ("sbcl")))
+
+;; load Color Theme
+(load-file (concat *EMACS-ENV* "/packages/color-theme.el"))
+(load-file (concat *EMACS-ENV* "/packages/color-theme-vibrant-ink.el"))
+
+(require 'color-theme)
+
+(eval-after-load "color-theme"
+ '(progn
+    (color-theme-calm-forest)))
+
+(global-hl-line-mode)
 
 ;; ido-mode
 (require 'ido)
@@ -73,6 +81,9 @@
 
 ;; tabs
 (setq-default indent-tabs-mode nil)
+
+;;comments
+;(define-key map [(control meta \;)] 'comment-or-uncomment-region-or-line)
 
 ;; desktop-save mode
 (setq *foo-desktop-dir* (expand-file-name "~/.emacs.d/desktop"))
@@ -182,11 +193,11 @@
 
 ;; js-lint 
 ;; JSLINT_HOME needs to be set and be on the path
-(require 'flymake-jslint)
-(add-hook 'javascript-mode-hook
-	  (lambda () 
-	    (flymake-mode t)
-	    (local-set-key [f8] 'flymake-display-err-menu-for-current-line)))
+;;(require 'flymake-jslint)
+;;(add-hook 'javascript-mode-hook
+;;	  (lambda () 
+;;	    (flymake-mode t)
+;;	    (local-set-key [f8] 'flymake-display-err-menu-for-current-line)))
 
 ;;; moz-labs
 (autoload 'moz-minor-mode "moz" "Mozilla Minor and Inferior Mozilla Modes" t)
@@ -200,8 +211,15 @@
 ;(require 'erlang-start)
 
 ;; distel mode for Erlang
-;(require 'distel)
-;(distel-setup)
+(require 'distel)
+(distel-setup)
+(add-to-list 'auto-mode-alist '("\\.erl$" . erlang-mode))
+
+;; Haskell mode
+(require 'haskell-mode)
+
+;; SML mode
+(load "/usr/local/share/emacs/site-lisp/sml-mode/sml-mode-startup")
 
 ;; column-number-mode
 (setq line-number-mode t)
