@@ -415,6 +415,8 @@ Deprecated: use `paredit-mode' instead."
    ("M-("       paredit-wrap-round
                 ("(foo |bar baz)"
                  "(foo (|bar) baz)"))
+   ("M-["       paredit-wrap-square)
+   ("M-{"       paredit-wrap-curly)
    ("M-s"       paredit-splice-sexp
                 ("(foo (bar| baz) quux)"
                  "(foo bar| baz quux)"))
