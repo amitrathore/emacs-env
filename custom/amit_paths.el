@@ -18,9 +18,9 @@
 (mapcar 'add-to-extra-classpath FABRIC-JARS)
 
 ;;; the Jabberwocky project
-(add-to-list 'extra-classpaths (concat *WORKSPACE* "/jabberwocky/src/"))
+;(add-to-list 'extra-classpaths (concat *WORKSPACE* "/jabberwocky/src/"))
 (setq JABBERWOCKY-JARS
-      (directory-files (concat *WORKSPACE* "/jabberwocky/lib/java/") t "\\.jar$"))
+      (directory-files (concat *WORKSPACE* "/jabberwocky/lib/") t "\\.jar$"))
 (mapcar 'add-to-extra-classpath JABBERWOCKY-JARS)
 
 ;;; the Clojure in Action project
