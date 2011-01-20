@@ -1,9 +1,21 @@
 (setq *MONITOR-WIDTH* 1920)
 
-(setq *WORKSPACE* "/Users/admin/work/runa")
-(setq *FURTIVE-ROOT* "/Users/admin/work/runa/furtive")
-(setq *SWARMIJI-ROOT* "/Users/admin/work/runa/swarmiji")
-(setq *COMMON-JARS-ROOT* "/Users/admin/work/runa/common-jars")
+(setq *WORKSPACE* "/Users/siva/work/runa")
+(setq *FURTIVE-ROOT* "/Users/siva/work/runa/furtive")
+(setq *SWARMIJI-ROOT* "/Users/siva/work/runa/swarmiji")
+(setq *COMMON-JARS-ROOT* "/Users/siva/work/runa/common-jars")
+
+(setenv "FURTIVE_HOME" (concat (getenv "HOME") "/work/runa/furtive"))
+(setenv "FURTIVE_ENV" "development")
+(setenv "SWARMIJI_HOME" (concat (getenv "FURTIVE_HOME") "/lib/clojure/swarmiji"))
+(setenv "SWARMIJI_ENV" "development")
+(setenv "SUMMARIZER_NS" "tesla")
+
+(setenv "FURTIVE_HOME" (concat (getenv "HOME") "/work/runa/furtive"))
+(setenv "FURTIVE_ENV" "development")
+(setenv "SWARMIJI_HOME" (concat (getenv "FURTIVE_HOME") "/lib/clojure/swarmiji"))
+(setenv "SWARMIJI_ENV" "development")
+(setenv "SUMMARIZER_NS" "tesla")
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -19,3 +31,4 @@
  ;; If there is more than one, they won't work right.
  )
 
+(global-unset-key [(super p)])
