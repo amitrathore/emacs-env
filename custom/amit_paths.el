@@ -54,3 +54,5 @@
 
 (add-to-list 'extra-classpaths (concat *WORKSPACE* "/sandman-client/src/"))
 (add-to-list 'extra-classpaths (concat *WORKSPACE* "/sandman-client/spec/"))
+
+(add-to-list 'extra-classpaths "/Users/amit/workspace/clojure-in-action/code/intellij/compilation/src/")
