@@ -27,13 +27,14 @@
 (add-to-list 'load-path (concat *EMACS-ENV* "/packages/swank-clojure/src/emacs"))
 
 (setq swank-clojure-jar-path (concat *EMACS-ENV* "/packages/clojure/clojure.jar"))
+
 ;      swank-clojure-extra-classpaths (list
 ;				        (concat *EMACS-ENV* "/packages/swank-clojure/src/main/clojure")
 ;                                       (concat *EMACS-ENV* "/packages/clojure-contrib/clojure-contrib.jar")))
 
 (load-file (concat *EMACS-ENV* "/custom/swank_paths.el"))
 
-(require 'swank-clojure-autoload)
+(require 'swank-clojure)
 
 ;;; paredit
 (require 'paredit)
@@ -102,6 +103,9 @@
 ;; winner-mode for window configuration management
 (winner-mode 1)
 
+;;; highlight-interactive mode
+(global-hi-lock-mode 1)
+
 ;; save-point in file
 (require 'saveplace)
 (setq-default save-place t)
@@ -156,6 +160,21 @@
 ;; windmove
 (when (fboundp 'windmove-default-keybindings)
       (windmove-default-keybindings))
+
+;; revert-all-buffers
+(defun revert-all-buffers ()
+  "Refreshes all open buffers from their respective files"
+  (interactive)
+  (let* ((list (buffer-list))
+         (buffer (car list)))
+    (while buffer
+      (when (buffer-file-name buffer)
+        (progn
+          (set-buffer buffer)
+          (revert-buffer t t t)))
+      (setq list (cdr list))
+      (setq buffer (car list))))
+  (message "Refreshing open files"))
 
 ;; ruby mode
 (autoload 'ruby-mode "ruby-mode"
