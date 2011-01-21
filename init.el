@@ -7,7 +7,6 @@
 ;;; interfacing with ELPA, the package archive.
 ;;; Move this code earlier if you want to reference
 ;;; packages in your .emacs.
-
 (when
     (load
      (expand-file-name "~/.emacs.d/elpa/package.el"))
@@ -23,18 +22,19 @@
 
 (require 'clojure-mode)
 
+;; clojure-mode
+(require 'clojure-mode)
+
 ;; swank-clojure
-(add-to-list 'load-path (concat *EMACS-ENV* "/packages/swank-clojure/src/emacs"))
-(setq swank-clojure-jar-path (concat *EMACS-ENV* "/packages/clojure/clojure.jar"))
-<<<<<<< HEAD
+(add-to-list 'load-path (concat *FURTIVE-ROOT* "/lib/clojure/swank-clojure/src"))
 
-;      swank-clojure-extra-classpaths (list
-;				        (concat *EMACS-ENV* "/packages/swank-clojure/src/main/clojure")
-;                                       (concat *EMACS-ENV* "/packages/clojure-contrib/clojure-contrib.jar")))
+(setq swank-clojure-jar-path (concat *FURTIVE-ROOT* "/lib/java/clojure-1.2.0.jar"))
+(setq swank-clojure-classpath (list
+                               (concat *FURTIVE-ROOT* "/lib/clojure/swank-clojure/src/")
+                               (concat *FURTIVE-ROOT* "/lib/java/*")))
+(load-file (concat *EMACS-ENV* "/custom/swank_paths.el")) ;;do this after the setq call above
 
-=======
->>>>>>> bab3eaf1c571bea2bea57c81606a8f13efa2834b
-(load-file (concat *EMACS-ENV* "/custom/swank_paths.el"))
+(setq swank-clojure-jar-home (concat *FURTIVE-ROOT* "/lib/clojure/swank-clojure/lib/"))
 
 (require 'swank-clojure)
 
@@ -88,9 +88,6 @@
 
 ;; tabs
 (setq-default indent-tabs-mode nil)
-
-;;comments
-;(define-key map [(control meta \;)] 'comment-or-uncomment-region-or-line)
 
 ;; desktop-save mode
 (setq *foo-desktop-dir* (expand-file-name "~/.emacs.d/desktop"))
@@ -164,12 +161,6 @@
 (require 'maxframe)
 (setq mf-max-width *MONITOR-WIDTH*)  ;; Pixel width of main monitor.
 (add-hook 'window-setup-hook 'maximize-frame t)
-
-;;slime
-;;(add-hook 'slime-connected-hook (lambda () 
-;;                                 (slime-redirect-inferior-output)
-;;                                  (slime-eval `(swank:eval-and-grab-output "(use 'com.cinch.furtive.init)"))
-;;                                  (slime-eval `(swank:eval-and-grab-output "(load-furtive-emacs)"))))
 
 ;; revive
 (autoload 'save-current-configuration "revive" "Save status" t)
@@ -255,9 +246,6 @@
 ;; load custom key-bindings
 (load-file (concat *EMACS-ENV* "/custom/key_bindings.el"))
 (put 'narrow-to-region 'disabled nil)
-
-
-;; Wordpress
 
 
 ;; load Color Theme
