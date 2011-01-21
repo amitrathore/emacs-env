@@ -5,6 +5,13 @@
 (setq *SWARMIJI-ROOT* "/Users/amit/workspace/swarmiji")
 (setq *COMMON-JARS-ROOT* "/Users/amit/workspace/common-jars")
 
+(setenv "FURTIVE_HOME" (concat (getenv "HOME") "/workspace/furtive"))
+(setenv "FURTIVE_ENV" "development")
+(setenv "SWARMIJI_HOME" (concat (getenv "HOME") "/workspace/swarmiji"))
+(setenv "SWARMIJI_ENV" "development")
+(setenv "SUMMARIZER_NS" "tesla")
+
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

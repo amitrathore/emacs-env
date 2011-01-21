@@ -11,12 +11,6 @@
       (directory-files (concat *WORKSPACE* "/remember/lib/java/") t "\\.jar$"))
 (mapcar 'add-to-extra-classpath REMEMBER-JARS)
 
-;;; the Fabric project
-(add-to-list 'extra-classpaths (concat *WORKSPACE* "/fabric/src/"))
-(setq FABRIC-JARS
-      (directory-files (concat *WORKSPACE* "/fabric/lib/") t "\\.jar$"))
-(mapcar 'add-to-extra-classpath FABRIC-JARS)
-
 ;;; the Jabberwocky project
 ;(add-to-list 'extra-classpaths (concat *WORKSPACE* "/jabberwocky/src/"))
 (setq JABBERWOCKY-JARS

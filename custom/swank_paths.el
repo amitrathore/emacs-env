@@ -32,4 +32,4 @@
 
 (load-file (concat *EMACS-ENV* "/custom/user_paths.el"))
 
-(add-to-list 'swank-clojure-extra-classpaths extra-classpaths)
+(setq swank-clojure-classpath (append swank-clojure-classpath extra-classpaths))
