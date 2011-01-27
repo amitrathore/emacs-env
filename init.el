@@ -1,7 +1,5 @@
 (setq *EMACS-ENV* "~/.emacs.d")
 
-(load-file (concat *EMACS-ENV* "/user-setup.el"))
-
 ;;; This was installed by package-install.el.
 ;;; This provides support for the package system and
 ;;; interfacing with ELPA, the package archive.
@@ -12,25 +10,20 @@
      (expand-file-name "~/.emacs.d/elpa/package.el"))
   (package-initialize))
 
+(load-file (concat *EMACS-ENV* "/user-setup.el"))
+
 (add-to-list 'load-path *EMACS-ENV*)
 (add-to-list 'load-path (concat *EMACS-ENV* "/packages"))
 (add-to-list 'load-path (concat *EMACS-ENV* "/packages/clojure-mode"))
-(add-to-list 'load-path (concat *EMACS-ENV* "/packages/swank-clojure"))
+;(add-to-list 'load-path (concat *EMACS-ENV* "/packages/swank-clojure"))
 (add-to-list 'load-path (concat *EMACS-ENV* "/packages/slime"))
-(add-to-list 'load-path "/usr/local/Cellar/erlang/R14B/lib/erlang/lib/tools-2.6.6.1/emacs")
-(add-to-list 'load-path (concat *EMACS-ENV* "/packages/distel-4.03/elisp"))
 
 (load-file (concat *EMACS-ENV* "/init/init_clojure.el"))
 (load-file (concat *EMACS-ENV* "/init/init_ruby.el"))
 (load-file (concat *EMACS-ENV* "/init/init_emacs.el"))
 (load-file (concat *EMACS-ENV* "/init/init_javascript.el"))
-(load-file (concat *EMACS-ENV* "/init/init_erlang.el"))
-(load-file (concat *EMACS-ENV* "/init/init_haskell.el"))
-(load-file (concat *EMACS-ENV* "/init/init_sml.el"))
 
-;; load custom key-bindings
 (load-file (concat *EMACS-ENV* "/custom/key_bindings.el"))
-
 (load-file (concat *EMACS-ENV* "/init/init_color.el"))
 
 (custom-set-variables
