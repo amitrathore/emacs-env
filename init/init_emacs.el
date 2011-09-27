@@ -2,6 +2,8 @@
 (load-file (concat *EMACS-ENV* "/packages/color-theme.el"))
 (load-file (concat *EMACS-ENV* "/packages/color-theme-vibrant-ink.el"))
 
+(setq magit-revert-item-confirm t)
+
 (require 'color-theme)
 
 (eval-after-load "color-theme"

@@ -11,6 +11,9 @@
 (setenv "SWARMIJI_ENV" "development")
 (setenv "SUMMARIZER_NS" "tesla")
 
+(setenv "INSTAFUN_HOME" (concat *WORKSPACE* "/instafun"))
+(setenv "INSTAFUN_ENV" "development")
+
 (load-file (concat *EMACS-ENV* "/init/init_erlang.el"))
 (load-file (concat *EMACS-ENV* "/init/init_haskell.el"))
 (load-file (concat *EMACS-ENV* "/init/init_sml.el"))

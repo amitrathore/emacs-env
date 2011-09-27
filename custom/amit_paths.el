@@ -17,6 +17,12 @@
       (directory-files (concat *WORKSPACE* "/jabberwocky/lib/") t "\\.jar$"))
 (mapcar 'add-to-extra-classpath JABBERWOCKY-JARS)
 
+;; PARJER
+(setq PARJER-JARS
+      (directory-files (concat *WORKSPACE* "/parjer/lib/java") t "\\.jar$"))
+(mapcar 'add-to-extra-classpath PARJER-JARS)
+(add-to-list 'extra-classpaths (concat *WORKSPACE* "/parjer/src/"))
+
 ;;; the Clojure in Action project
 (add-to-list 'extra-classpaths "/Users/amit/labs/projectx/writing/manning/muse/muse-content/")
 (add-to-list 'extra-classpaths (concat *WORKSPACE* "/ring/src/"))
