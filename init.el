@@ -1,5 +1,15 @@
 (setq *EMACS-ENV* "~/.emacs.d")
 
+(defun set-exec-path-from-shell-PATH ()
+  (let ((path-from-shell (replace-regexp-in-string
+                          "[ \t\n]*$"
+                          ""
+                          (shell-command-to-string "$SHELL --login -i -c 'echo $PATH'"))))
+    (setenv "PATH" path-from-shell)
+    (setq exec-path (split-string path-from-shell path-separator))))
+
+(if window-system (set-exec-path-from-shell-PATH))
+
 (require 'dired)
 
 ;;; This was installed by package-install.el.
@@ -18,7 +28,7 @@
 (add-to-list 'load-path (concat *EMACS-ENV* "/packages"))
 (add-to-list 'load-path (concat *EMACS-ENV* "/packages/clojure-mode"))
 ;(add-to-list 'load-path (concat *EMACS-ENV* "/packages/swank-clojure"))
-(add-to-list 'load-path (concat *EMACS-ENV* "/packages/slime"))
+;(add-to-list 'load-path (concat *EMACS-ENV* "/packages/slime"))
 
 (load-file (concat *EMACS-ENV* "/init/init_clojure.el"))
 (load-file (concat *EMACS-ENV* "/init/init_ruby.el"))
